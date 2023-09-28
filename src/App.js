@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { useState } from "react";
+import { v4 as idGenerator } from "uuid";
+
+import ItemList from "./components/ItemList";
+import ShopForm from "./components/ShopForm";
+import SummaryInfo from "./components/SummaryIfo";
 
 function App() {
+  const [shopListDB, setShopListDB] = useState([]);
+
+  const addItemHandler = (newItem) => {
+    const newItemTemplate = {
+      itemName: newItem.itemName,
+      itemID: idGenerator(),
+      itemPrice: newItem.itemPrice,
+      isItemByed: false,
+      itemVolume: {
+        volume: 0,
+        typeofVolume: "шт",
+      },
+    };
+
+    setShopListDB([...shopListDB, newItemTemplate]);
+  };
+
+  console.dir(shopListDB);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Список Покупок</h1>
+      <ShopForm addItem={addItemHandler} />
+      <ItemList shopList={shopListDB} />
+      <SummaryInfo itemList={shopListDB} />
     </div>
   );
 }
