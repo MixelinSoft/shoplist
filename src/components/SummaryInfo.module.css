@@ -1,0 +1,11 @@
+.summaryContainer {
+  position: absolute;
+  padding: 8px;
+  right: 8px;
+  bottom: 48px;
+  background-color: #677d85;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 6px;
+  font-size: 24px;
+  font-weight: 800;
+}

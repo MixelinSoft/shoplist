@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.inputText {
+  padding: 8px;
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+}
+
+.addButton {
+  margin: 0 auto;
+  padding: 8px;
+  font-size: 28px;
+  background-color: #c4f0ff;
+  border-radius: 10px;
+  width: 60%;
+}

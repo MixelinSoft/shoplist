@@ -1,7 +1,11 @@
+import styles from "./Item.module.css";
 const Item = ({ item }) => {
   return (
-    <div>
-      <h2>{item.itemName}</h2>
+    <div className={styles.itemContainer}>
+      <div className={styles.itemName}>
+        <p>{item.itemName}</p>
+      </div>
+
       <p>{item.itemPrice}</p>
     </div>
   );
